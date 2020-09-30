@@ -2,7 +2,7 @@ defmodule FizzBuzz do
   def build(file_name) do
     file_name
     |> File.read()
-    |> handle_read_file
+    |> handle_read_file()
   end
 
   defp handle_read_file({:ok, result}) do
@@ -19,7 +19,7 @@ defmodule FizzBuzz do
   defp convert_to_number(elem) do
     elem
     |> String.to_integer()
-    |> evaluate_numbers
+    |> evaluate_numbers()
   end
 
   defp evaluate_numbers(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzbuzz
