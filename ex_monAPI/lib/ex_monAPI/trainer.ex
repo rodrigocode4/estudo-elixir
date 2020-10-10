@@ -18,12 +18,13 @@ defmodule ExMonAPI.Trainer do
     |> apply_action(:insert)
   end
 
-  def changeset(params), do: create_changeset(%__MODULE__, params)
+  def changeset(params), do: create_changeset(%__MODULE__{}, params)
   def changeset(trainer, params), do: create_changeset(trainer, params)
 
   @required_params [:name, :password]
   defp create_changeset(trainer_or_module, params) do
     trainer_or_module
+    |> IO.inspect()
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_length(:password, min: 6)
