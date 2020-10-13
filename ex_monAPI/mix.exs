@@ -44,6 +44,7 @@ defmodule ExMonAPI.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:argon2_elixir, "~> 2.3.0"},
+      {:tesla, "~> 1.3.0"}
     ]
   end
 
