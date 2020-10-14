@@ -4,6 +4,7 @@ defmodule ExMonAPI.Pokemon.Get do
 
   def call(name) do
     name
+    |> IO.inspect()
     |> Client.get_pokemon()
     |> handle_response()
   end
