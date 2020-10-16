@@ -23,7 +23,7 @@ defmodule ExMonAPI.Trainer.Pokemon do
     |> apply_action(:insert)
   end
 
-  @required [:name, :nickname, :weight, :types, :trainer_idd]
+  @required [:name, :nickname, :weight, :types, :trainer_id]
   def changeset(params) do
     %__MODULE__{}
     |> cast(params, @required)
