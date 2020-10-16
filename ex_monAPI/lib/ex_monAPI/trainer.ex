@@ -2,6 +2,7 @@ defmodule ExMonAPI.Trainer do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias ExMonAPI.Trainer.Pokemon
 
   @primary_key {:id, Ecto.UUID, autogenerate: true}
   schema "trainers" do
@@ -9,6 +10,7 @@ defmodule ExMonAPI.Trainer do
     field :password_hash, :string
     field :password, :string, virtual: true
 
+    has_many(:pokemons, Pokemon)
     timestamps()
   end
 
