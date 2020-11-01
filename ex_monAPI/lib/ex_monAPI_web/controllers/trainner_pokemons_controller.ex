@@ -1,4 +1,4 @@
-defmodule ExMonAPIWeb.TrainerPokemonController do
+defmodule ExMonAPIWeb.TrainerPokemonsController do
   use ExMonAPIWeb, :controller
   alias ExMonAPI
   action_fallback ExMonAPIWeb.FallbackController
@@ -13,6 +13,13 @@ defmodule ExMonAPIWeb.TrainerPokemonController do
     id
     |> ExMonAPI.delete_trainer_pokemons()
     |> handle_delete(conn)
+  end
+
+  def show(conn, %{"id" => id}) do
+    id
+    |> ExMonAPI.get_trainer_pokemons()
+    |> handle_response(conn, "show.json", :ok)
+
   end
 
   defp handle_response({:ok, pokemon}, conn, view, status) do
