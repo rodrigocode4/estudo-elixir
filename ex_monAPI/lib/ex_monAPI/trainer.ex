@@ -10,7 +10,7 @@ defmodule ExMonAPI.Trainer do
     field :password_hash, :string
     field :password, :string, virtual: true
 
-    has_many(:pokemons, Pokemon)
+    has_many(:pokemon, Pokemon)
     timestamps()
   end
 
